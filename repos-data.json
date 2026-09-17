@@ -1,0 +1,308 @@
+[
+  {
+    "name": "Fatec-ourinhos-python",
+    "description": "Meus exercícios feito na Fatec de Ourinhos no curso de Ciências de Dados.",
+    "language": "Python",
+    "url": "https://github.com/MarcosGabrielDF/Fatec-ourinhos-python",
+    "stars": 0,
+    "updated": "2026-09-01",
+    "category": "dados"
+  },
+  {
+    "name": "worldbank-wipo-processor",
+    "description": "Repositório dedicado ao processamento de indicadores de desenvolvimento mundial e inovação. Contém scripts para tratamento de séries temporais, limpeza de dados econômicos e geração de rankings automatizados. Focado na transformação de dados brutos em insights estruturados para análise comparativa entre países.",
+    "language": "Python",
+    "url": "https://github.com/MarcosGabrielDF/worldbank-wipo-processor",
+    "stars": 1,
+    "updated": "2026-04-13",
+    "category": "dados"
+  },
+  {
+    "name": "Estat-stica-discreta-com-Python-",
+    "description": "Colocando o conhecimento ganho no curso de Estatística do Enap na prática com Python.",
+    "language": "Python",
+    "url": "https://github.com/MarcosGabrielDF/Estat-stica-discreta-com-Python-",
+    "stars": 0,
+    "updated": "2026-03-31",
+    "category": "dados"
+  },
+  {
+    "name": "MarcosGAbrielDF",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "Geral",
+    "url": "https://github.com/MarcosGabrielDF/MarcosGAbrielDF",
+    "stars": 0,
+    "updated": "2026-03-30",
+    "category": "outros"
+  },
+  {
+    "name": "Canvas",
+    "description": "Desenvolvido como uma alternativa intuitiva e ágil às ferramentas convencionais de Canvas.",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/Canvas",
+    "stars": 0,
+    "updated": "2026-03-30",
+    "category": "frontend"
+  },
+  {
+    "name": "Relembrando-Python",
+    "description": "Voltando a estudar Python",
+    "language": "Python",
+    "url": "https://github.com/MarcosGabrielDF/Relembrando-Python",
+    "stars": 0,
+    "updated": "2026-03-03",
+    "category": "dados"
+  },
+  {
+    "name": "Lamechas",
+    "description": "Site criado para Luiz Alfredo Brosin",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/Lamechas",
+    "stars": 0,
+    "updated": "2026-02-25",
+    "category": "frontend"
+  },
+  {
+    "name": "Sabores_da_Paty",
+    "description": "Aplicação web desenvolvida para apresentar o cardápio do Sabores da Paty. O usuário pode visualizar os produtos, selecionar os itens desejados, adicioná-los ao carrinho e, ao finalizar, é direcionado automaticamente para o WhatsApp com a lista completa do pedido.",
+    "language": "PHP",
+    "url": "https://github.com/MarcosGabrielDF/Sabores_da_Paty",
+    "stars": 0,
+    "updated": "2025-10-13",
+    "category": "backend"
+  },
+  {
+    "name": "TCC-Heron-shelly1pm",
+    "description": "Este repositório contém o código-fonte do meu Trabalho de Conclusão de Curso (TCC): um sistema web desenvolvido para automatizar a sinalização sonora da Escola Professor Mário Antônio Versa, utilizando integração com Shelly 1PM. O projeto visa otimizar as rotinas escolares com uma interface intuitiva para configuração de horários e dias de toque.",
+    "language": "PHP",
+    "url": "https://github.com/MarcosGabrielDF/TCC-Heron-shelly1pm",
+    "stars": 0,
+    "updated": "2025-07-09",
+    "category": "iot"
+  },
+  {
+    "name": "php-python-docker",
+    "description": "Projeto base para aplicações web utilizando containers Docker com backend em PHP e Python, além de banco de dados MySQL. Ideal para desenvolvimento rápido e organizado, com serviços isolados e comunicação via rede Docker Compose.",
+    "language": "Python",
+    "url": "https://github.com/MarcosGabrielDF/php-python-docker",
+    "stars": 0,
+    "updated": "2025-05-22",
+    "category": "dados"
+  },
+  {
+    "name": "SW2-2025-lib",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "PHP",
+    "url": "https://github.com/MarcosGabrielDF/SW2-2025-lib",
+    "stars": 0,
+    "updated": "2025-05-22",
+    "category": "backend"
+  },
+  {
+    "name": "Lanchonete-do-Bar-o",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "PHP",
+    "url": "https://github.com/MarcosGabrielDF/Lanchonete-do-Bar-o",
+    "stars": 0,
+    "updated": "2025-04-24",
+    "category": "backend"
+  },
+  {
+    "name": "biblioteca-php-2025",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "PHP",
+    "url": "https://github.com/MarcosGabrielDF/biblioteca-php-2025",
+    "stars": 0,
+    "updated": "2025-04-10",
+    "category": "backend"
+  },
+  {
+    "name": "swq-2025-slim-certo",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "PHP",
+    "url": "https://github.com/MarcosGabrielDF/swq-2025-slim-certo",
+    "stars": 0,
+    "updated": "2025-03-26",
+    "category": "backend"
+  },
+  {
+    "name": "sw1-2025-slim",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "PHP",
+    "url": "https://github.com/MarcosGabrielDF/sw1-2025-slim",
+    "stars": 0,
+    "updated": "2025-03-26",
+    "category": "backend"
+  },
+  {
+    "name": "sw2-php-slim-2025",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "PHP",
+    "url": "https://github.com/MarcosGabrielDF/sw2-php-slim-2025",
+    "stars": 0,
+    "updated": "2025-03-20",
+    "category": "backend"
+  },
+  {
+    "name": "sw2-php-ex1-2025",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "PHP",
+    "url": "https://github.com/MarcosGabrielDF/sw2-php-ex1-2025",
+    "stars": 0,
+    "updated": "2025-03-13",
+    "category": "backend"
+  },
+  {
+    "name": "sw2-2025-primeiro-exemplo",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "TypeScript",
+    "url": "https://github.com/MarcosGabrielDF/sw2-2025-primeiro-exemplo",
+    "stars": 0,
+    "updated": "2025-02-20",
+    "category": "frontend"
+  },
+  {
+    "name": "Python-do-zero-ao-avan-ado",
+    "description": "Estes são os conteúdos sobre Python abordados na aula do Bosón Treinamentos. O vídeo tem a duração de 8 horas, 56 minutos e 48 segundos. Ele aborda diversos temas sobre Python, incluindo manipulação de strings, funções, bibliotecas, dicionários, listas, tuplas, laços de repetição, entre outros.",
+    "language": "Python",
+    "url": "https://github.com/MarcosGabrielDF/Python-do-zero-ao-avan-ado",
+    "stars": 0,
+    "updated": "2024-10-14",
+    "category": "dados"
+  },
+  {
+    "name": "exercicio-container",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/exercicio-container",
+    "stars": 0,
+    "updated": "2024-06-15",
+    "category": "devops"
+  },
+  {
+    "name": "exemplo-docker",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "Geral",
+    "url": "https://github.com/MarcosGabrielDF/exemplo-docker",
+    "stars": 0,
+    "updated": "2024-06-08",
+    "category": "devops"
+  },
+  {
+    "name": "iniciando-bash",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "Shell",
+    "url": "https://github.com/MarcosGabrielDF/iniciando-bash",
+    "stars": 0,
+    "updated": "2024-05-18",
+    "category": "devops"
+  },
+  {
+    "name": "exemplo-bash",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "Shell",
+    "url": "https://github.com/MarcosGabrielDF/exemplo-bash",
+    "stars": 0,
+    "updated": "2024-05-10",
+    "category": "devops"
+  },
+  {
+    "name": "Jogo-do-JP",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "JavaScript",
+    "url": "https://github.com/MarcosGabrielDF/Jogo-do-JP",
+    "stars": 0,
+    "updated": "2024-01-20",
+    "category": "frontend"
+  },
+  {
+    "name": "html-css",
+    "description": "curso de html e css do curso em video ",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/html-css",
+    "stars": 0,
+    "updated": "2024-01-19",
+    "category": "frontend"
+  },
+  {
+    "name": "projeto-cordel",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/projeto-cordel",
+    "stars": 0,
+    "updated": "2023-08-12",
+    "category": "frontend"
+  },
+  {
+    "name": "cof-roma",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/cof-roma",
+    "stars": 0,
+    "updated": "2023-06-20",
+    "category": "frontend"
+  },
+  {
+    "name": "site-jornal-etec",
+    "description": "Site do Jornal  da Etec de Palmital ",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/site-jornal-etec",
+    "stars": 0,
+    "updated": "2023-05-22",
+    "category": "frontend"
+  },
+  {
+    "name": "regras",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/regras",
+    "stars": 0,
+    "updated": "2023-02-22",
+    "category": "frontend"
+  },
+  {
+    "name": "x-geek",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/x-geek",
+    "stars": 0,
+    "updated": "2022-12-31",
+    "category": "frontend"
+  },
+  {
+    "name": "login",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "PHP",
+    "url": "https://github.com/MarcosGabrielDF/login",
+    "stars": 0,
+    "updated": "2022-10-16",
+    "category": "backend"
+  },
+  {
+    "name": "trabalho-de-tecnologia",
+    "description": "Projeto com código-fonte disponível no repositório.",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/trabalho-de-tecnologia",
+    "stars": 0,
+    "updated": "2022-08-27",
+    "category": "frontend"
+  },
+  {
+    "name": "projeto-android",
+    "description": "projeto Android criado no capitulo 17 do curso em video.",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/projeto-android",
+    "stars": 0,
+    "updated": "2022-08-23",
+    "category": "frontend"
+  },
+  {
+    "name": "cursoJS",
+    "description": "curso de JavaScript",
+    "language": "HTML",
+    "url": "https://github.com/MarcosGabrielDF/cursoJS",
+    "stars": 0,
+    "updated": "2022-08-09",
+    "category": "frontend"
+  }
+]

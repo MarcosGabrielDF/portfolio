@@ -1,134 +1,804 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>...</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="style.css" media="all">
+    <meta name="description" content="Portfólio de Marcos Gabriel Dias Fernandes - Estudante de Ciência de Dados na Fatec Ourinhos, Desenvolvedor Full Stack (Python, PHP, Docker) e Projetos em IoT.">
+    <meta name="keywords" content="Marcos Gabriel, Ciência de Dados, Python, PHP, Slim Framework, Docker, IoT, Shelly 1PM, Fatec Ourinhos, Portfólio 3D">
+    <meta name="author" content="Marcos Gabriel Dias Fernandes">
+    <title>Marcos Gabriel | Portfólio - Ciência de Dados & Full Stack 3D</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div id="gam">
 
-            <img src="" alt="">
+    <!-- 3D Interactive Three.js Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
 
-            <div id="titu">
-                <h1>Marcos Gabriel</h1>
-            </div>
+    <!-- Mobile Navigation Overlay -->
+    <div id="menu-overlay" class="menu-overlay"></div>
 
-            <span id="menuu" onclick="clickMenu() "class="material-symbols-outlined">menu</span>
-        </div>
-        
-            <menu id="itens">
-                <ul>
-                    <li><a target="_blank" rel="external" href="https://supermario-game.com/pt">Jogo</a></li>
-                    <li><a target="_blank" rel="external" href="https://www.canva.com/design/DAF6SfbGUJc/kCasM9dZGidCsSYkZG8cNQ/view?utm_content=DAF6SfbGUJc&utm_campaign=designshare&utm_medium=link&utm_source=editor">Canva</a></li>
-                </ul>
-            </menu>
-        
-    </header>
-    <main>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-symbol">&lt;MG /&gt;</span>
+                <span>Marcos Gabriel</span>
+                <span class="brand-status-dot" title="Disponível para novos projetos"></span>
+            </a>
 
-        <section id="sec1" >
-
-            <nav id="menu2">
-                <ul>
-                    <ul class="submenu">
-                        <li class="minhas-redes"><a target="_blank" rel="external" href="https://www.instagram.com/marcos_gabriel_d.f/"><img class="logo" src="fotos/instagram.png" alt="Logo do Instagram"></a></li>
-                        <li class="minhas-redes"><a target="_blank" rel="external" href="https://www.facebook.com/profile.php?id=100075214742550"><img class="logo" src="fotos/facebook.png" alt="Logo do Facebook"></a></li>
-                        <li class="minhas-redes"><a target="_blank" rel="external" href="https://www.linkedin.com/in/marcos-gabriel-34ba07295/"><img class="logo" src="fotos/Linkedin.png" alt="Logo do Linkedin"></a></li>
-                        <li class="minhas-redes"><a target="_blank" rel="external" href="https://github.com/GambollGabriel"><img class="logo" src="fotos/GitHub.png" alt="Logo do GitHub"></a></li>
-                    </ul>
-                    
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#hero" class="nav-link">Início</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                    <li><a href="#destaques" class="nav-link">Destaques</a></li>
+                    <li><a href="#repos" class="nav-link">Repositórios</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
             </nav>
-          
 
+            <div class="nav-actions">
+                <a href="https://wa.me/5543996195689?text=Ol%C3%A1%20Marcos%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade." 
+                   target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <i data-lucide="message-square"></i> Fale Comigo
+                </a>
+                <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Abrir menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
-            <div id="ori" >
-                <div id="lado1">
-                    <div id="carouselExampleIndicators" class="carousel slide pad" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                            </ol>
-                            <div class="carousel-inner" style="height: 400px;">
-                            <div class="carousel-item h-100 active" style="background-image: url(fotos/Maos-Solidarias-Etec-Prof.-Mario-Antonio-Verza.jpeg); background-size: contain; background-repeat: no-repeat; background-position: center; ">
-                            </div>
-                            <div class="carousel-item h-100" style="background-image: url(fotos/Apresentação-da-pessa-farsa-de-Inês-Pereira.jpeg); background-size: contain; background-repeat: no-repeat; background-position: center; ">
-                            </div>
-                            <div class="carousel-item h-100" style="background-image: url(fotos/época-boa.jpeg);background-size: contain; background-repeat: no-repeat; background-position: center; ">
-                            </div>
-                            <div class="carousel-item h-100" style="background-image: url(fotos/gif-do-garoto-menino-dando-joinha.gif);background-size: contain; background-repeat: no-repeat; background-position: center; ">
-                            </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Anterior</span>
+    <main>
+        <!-- Hero Section with 3D Holographic Core -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="badge">
+                            <span class="badge-dot"></span>
+                            <span>Fatec Ourinhos • Ciência de Dados &amp; Software</span>
+                        </div>
+
+                        <h1 class="hero-title">
+                            Olá, eu sou <br>
+                            <span class="gradient-text">Marcos Gabriel</span>
+                        </h1>
+
+                        <div class="hero-typewriter-container">
+                            <span class="prefix">&gt;</span>
+                            <span id="typewriter-text"></span>
+                            <span class="typewriter-cursor"></span>
+                        </div>
+
+                        <p class="hero-description">
+                            Graduando em <strong>Ciência de Dados</strong> pela Fatec Ourinhos e Desenvolvedor Full Stack. 
+                            Uno análise estatística, pipelines de dados em Python, microsserviços em PHP (Slim) e integração de 
+                            hardware IoT com automações inteligentes.
+                        </p>
+
+                        <div class="hero-tags">
+                            <span class="tech-chip"><i data-lucide="database"></i> Ciência de Dados</span>
+                            <span class="tech-chip"><i data-lucide="code-2"></i> Python</span>
+                            <span class="tech-chip"><i data-lucide="server"></i> PHP &amp; Slim</span>
+                            <span class="tech-chip"><i data-lucide="box"></i> Docker</span>
+                            <span class="tech-chip"><i data-lucide="cpu"></i> IoT (Shelly 1PM)</span>
+                            <span class="tech-chip"><i data-lucide="layers"></i> MySQL</span>
+                        </div>
+
+                        <div class="hero-cta-group">
+                            <a href="#destaques" class="btn btn-primary">
+                                <span>Ver Projetos</span>
+                                <i data-lucide="arrow-right"></i>
                             </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Próximo</span>
+                            <a href="https://github.com/MarcosGabrielDF" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <i data-lucide="github"></i>
+                                <span>GitHub (34 Repos)</span>
                             </a>
+                        </div>
+
+                        <div class="hero-socials">
+                            <a href="https://github.com/MarcosGabrielDF" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-github" title="GitHub (@MarcosGabrielDF)">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/marcos-gabriel-34ba07295/" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-linkedin" title="LinkedIn (Marcos Gabriel)">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/marcos_gabriel_d.f/" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-instagram" title="Instagram (@marcos_gabriel_d.f)">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="https://wa.me/5543996195689?text=Ol%C3%A1%20Marcos%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade." target="_blank" rel="noopener noreferrer" class="social-icon-btn social-whatsapp" title="WhatsApp ((43) 99619-5689)">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100075214742550" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-facebook" title="Facebook">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3D Interactive Cyber Widget -->
+                    <div class="hero-visualizer">
+                        <div class="hero-3d-wrapper hero-card-3d">
+                            <div id="hero-3d-canvas-container"></div>
+                            
+                            <!-- Floating 3D Node Labels -->
+                            <div class="floating-3d-tag tag-pos-1">
+                                <i data-lucide="activity"></i> Data Science
+                            </div>
+                            <div class="floating-3d-tag tag-pos-2">
+                                <i data-lucide="cpu"></i> IoT Automation
+                            </div>
+                            <div class="floating-3d-tag tag-pos-3">
+                                <i data-lucide="box"></i> Docker &amp; Cloud
+                            </div>
+
+                            <div class="hero-3d-hint">
+                                <i data-lucide="move-3d"></i> Arraste o núcleo 3D com o mouse
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-                <section id="sec2">
-                    <h3>...</h3>
-                    <div class="container">
-                        <div class="row">
-                            <div class="campanha"><img src="fotos/p-1.jpeg" alt=""></div>
-                            <div class="campanha"><img style="transform: rotateY(180deg);" src="fotos/p-6.jpeg" alt=""></div><br>
+        <!-- Stats Bar (3D Tilt Cards) -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card tilt-card">
+                        <div class="stat-icon">
+                            <i data-lucide="folder-git-2"></i>
                         </div>
-                        <div class="row">
-                            <div class="campanha"><img src="fotos/p-3.jpeg" alt=""></div>
-                            <div class="campanha"><img src="fotos/p-5.jpeg" alt=""></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="stat-repos-count">34+</div>
+                            <div class="stat-label">Repositórios no GitHub</div>
                         </div>
                     </div>
-                </section>
-            </div>
-        
-        <section id="sec3"></section>
 
+                    <div class="stat-card tilt-card">
+                        <div class="stat-icon">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">Fatec</div>
+                            <div class="stat-label">Ciência de Dados (Ourinhos)</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card tilt-card">
+                        <div class="stat-icon">
+                            <i data-lucide="radio"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">IoT</div>
+                            <div class="stat-label">Automação com Shelly 1PM</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card tilt-card">
+                        <div class="stat-icon">
+                            <i data-lucide="boxes"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value">Docker</div>
+                            <div class="stat-label">Containers PHP + Python</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i data-lucide="user"></i> Trajetória &amp; Perfil</span>
+                    <h2 class="section-title">Sobre Mim</h2>
+                    <p class="section-subtitle">
+                        Integrando o raciocínio analítico da Ciência de Dados à engenharia de software aplicada e automação real.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>
+                            Meu nome é <strong>Marcos Gabriel Dias Fernandes</strong>. Atualmente curso <strong>Ciência de Dados na Fatec de Ourinhos</strong>, 
+                            após concluir formação técnica na <strong>Etec Professor Mário Antônio Verza</strong>, onde desenvolvi como TCC um sistema completo 
+                            de automação da sinalização escolar integrado ao relé inteligente <strong>Shelly 1PM</strong>.
+                        </p>
+                        <p>
+                            Minha paixão está em transformar dados desestruturados em decisões estratégicas, construir arquiteturas de backend organizadas 
+                            com <strong>PHP Slim</strong> e <strong>Python</strong>, e criar ambientes padronizados com <strong>Docker</strong>.
+                        </p>
+                        <p>
+                            Busco desafios onde eu possa aplicar algoritmos estatísticos, manipulação de dados (Pandas, ETL), engenharia de APIs e 
+                            soluções digitais que geram impacto mensurável no mundo real.
+                        </p>
+                        <div style="margin-top: 24px;">
+                            <a href="https://github.com/MarcosGabrielDF" target="_blank" rel="noopener noreferrer" class="btn btn-outline-cyan">
+                                <i data-lucide="github"></i> Visitar GitHub @MarcosGabrielDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="about-features-grid">
+                        <div class="about-feature-card tilt-card">
+                            <div class="feature-icon-box">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <h4>Análise &amp; Séries Temporais</h4>
+                            <p>Tratamento de dados econômicos e indicadores globais com Python e Pandas.</p>
+                        </div>
+
+                        <div class="about-feature-card tilt-card">
+                            <div class="feature-icon-box" style="background: rgba(139, 92, 246, 0.12); color: var(--accent-violet);">
+                                <i data-lucide="server"></i>
+                            </div>
+                            <h4>APIs RESTful &amp; Backend</h4>
+                            <p>Serviços modulares com PHP Slim Framework, MySQL e autenticação segura.</p>
+                        </div>
+
+                        <div class="about-feature-card tilt-card">
+                            <div class="feature-icon-box" style="background: rgba(236, 72, 153, 0.12); color: var(--accent-pink);">
+                                <i data-lucide="cpu"></i>
+                            </div>
+                            <h4>Automação &amp; Hardware IoT</h4>
+                            <p>Integração de relés Shelly 1PM, webhooks e painéis de agendamento em tempo real.</p>
+                        </div>
+
+                        <div class="about-feature-card tilt-card">
+                            <div class="feature-icon-box" style="background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald);">
+                                <i data-lucide="container"></i>
+                            </div>
+                            <h4>DevOps &amp; Containers</h4>
+                            <p>Configuração de containers isolados com Docker Compose e scripts Shell Bash.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section (3D Tilt Cards) -->
+        <section id="habilidades" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i data-lucide="code"></i> Competências Técnicas</span>
+                    <h2 class="section-title">Habilidades &amp; Tecnologias</h2>
+                    <p class="section-subtitle">
+                        Conjunto de ferramentas aplicadas em projetos acadêmicos, automações e sistemas web.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Ciência de Dados -->
+                    <div class="skill-card tilt-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon cyan">
+                                <i data-lucide="database"></i>
+                            </div>
+                            <h3 class="skill-card-title">Ciência de Dados</h3>
+                        </div>
+                        <p class="skill-description">
+                            Análise estatística, manipulação de dados estruturados e desestruturados, séries temporais e computação científica.
+                        </p>
+                        <div class="skill-items-list">
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">Pandas</span>
+                            <span class="skill-pill">NumPy</span>
+                            <span class="skill-pill">Estatística Discreta</span>
+                            <span class="skill-pill">Séries Temporais</span>
+                            <span class="skill-pill">Jupyter</span>
+                            <span class="skill-pill">ETL Pipelines</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend & APIs -->
+                    <div class="skill-card tilt-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon violet">
+                                <i data-lucide="server"></i>
+                            </div>
+                            <h3 class="skill-card-title">Backend &amp; APIs</h3>
+                        </div>
+                        <p class="skill-description">
+                            Arquitetura de microsserviços, controladores RESTful, injeção de dependências e banco de dados relacional.
+                        </p>
+                        <div class="skill-items-list">
+                            <span class="skill-pill">PHP 8</span>
+                            <span class="skill-pill">Slim Framework</span>
+                            <span class="skill-pill">MySQL</span>
+                            <span class="skill-pill">Composer</span>
+                            <span class="skill-pill">REST APIs</span>
+                            <span class="skill-pill">Autenticação &amp; Auth</span>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Infra -->
+                    <div class="skill-card tilt-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon blue">
+                                <i data-lucide="box"></i>
+                            </div>
+                            <h3 class="skill-card-title">DevOps &amp; Linux</h3>
+                        </div>
+                        <p class="skill-description">
+                            Isolamento de serviços em containers Docker, automação de rotinas em Shell Scripting e versionamento colaborativo.
+                        </p>
+                        <div class="skill-items-list">
+                            <span class="skill-pill">Docker</span>
+                            <span class="skill-pill">Docker Compose</span>
+                            <span class="skill-pill">Linux</span>
+                            <span class="skill-pill">Shell Bash</span>
+                            <span class="skill-pill">Git</span>
+                            <span class="skill-pill">GitHub</span>
+                        </div>
+                    </div>
+
+                    <!-- IoT & Automação -->
+                    <div class="skill-card tilt-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon pink">
+                                <i data-lucide="cpu"></i>
+                            </div>
+                            <h3 class="skill-card-title">IoT &amp; Automação</h3>
+                        </div>
+                        <p class="skill-description">
+                            Sistemas de acionamento de hardware, agendamento de eventos e integração de relés inteligentes com interfaces web.
+                        </p>
+                        <div class="skill-items-list">
+                            <span class="skill-pill">Shelly 1PM</span>
+                            <span class="skill-pill">Automação Escolar</span>
+                            <span class="skill-pill">Webhooks HTTP</span>
+                            <span class="skill-pill">Relés &amp; Sensores</span>
+                            <span class="skill-pill">Sistemas Embarcados</span>
+                        </div>
+                    </div>
+
+                    <!-- Frontend & 3D -->
+                    <div class="skill-card tilt-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon amber">
+                                <i data-lucide="layout"></i>
+                            </div>
+                            <h3 class="skill-card-title">Frontend &amp; 3D</h3>
+                        </div>
+                        <p class="skill-description">
+                            Construção de interfaces reativas, animações tridimensionais com Three.js e experiência de usuário interativa.
+                        </p>
+                        <div class="skill-items-list">
+                            <span class="skill-pill">JavaScript ES6+</span>
+                            <span class="skill-pill">TypeScript</span>
+                            <span class="skill-pill">Three.js 3D</span>
+                            <span class="skill-pill">VanillaTilt</span>
+                            <span class="skill-pill">HTML5 &amp; CSS3</span>
+                            <span class="skill-pill">Mobile-First</span>
+                        </div>
+                    </div>
+
+                    <!-- Metodologia & Fundamentos -->
+                    <div class="skill-card tilt-card">
+                        <div class="skill-card-header">
+                            <div class="skill-icon emerald">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <h3 class="skill-card-title">Fundamentos</h3>
+                        </div>
+                        <p class="skill-description">
+                            Raciocínio lógico estruturado, algoritmos e boas práticas de desenvolvimento de software.
+                        </p>
+                        <div class="skill-items-list">
+                            <span class="skill-pill">Estruturas de Dados</span>
+                            <span class="skill-pill">Algoritmos</span>
+                            <span class="skill-pill">Modelagem de Banco</span>
+                            <span class="skill-pill">Clean Code</span>
+                            <span class="skill-pill">Arquitetura MVC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section (Grandes Destaques) -->
+        <section id="destaques" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i data-lucide="sparkles"></i> Principais Criações</span>
+                    <h2 class="section-title">Projetos em Destaque</h2>
+                    <p class="section-subtitle">
+                        Soluções que demonstram aplicação real em Ciência de Dados, IoT, Backend e DevOps.
+                    </p>
+                </div>
+
+                <div class="featured-grid">
+                    <!-- Featured 1: World Bank & WIPO Processor -->
+                    <div class="featured-card tilt-card">
+                        <div class="featured-badge-row">
+                            <span class="featured-tag">Ciência de Dados &amp; Análise</span>
+                            <i data-lucide="trending-up" class="featured-icon"></i>
+                        </div>
+                        <h3 class="featured-title">World Bank &amp; WIPO Data Processor</h3>
+                        <p class="featured-description">
+                            Pipeline em Python voltado ao tratamento e processamento analítico de dados de desenvolvimento mundial 
+                            e inovação. Realiza limpeza de séries temporais econômicas e geração automática de rankings comparativos 
+                            entre diferentes nações.
+                        </p>
+                        <ul class="featured-highlights">
+                            <li><i data-lucide="check-circle-2"></i> Limpeza e normalização de bases de dados globais (World Bank &amp; WIPO).</li>
+                            <li><i data-lucide="check-circle-2"></i> Tratamento estatístico de séries temporais econômicas em Python.</li>
+                            <li><i data-lucide="check-circle-2"></i> Geração de métricas estruturadas para inteligência e comparativos.</li>
+                        </ul>
+                        <div class="featured-tags-row">
+                            <span class="tag-pill">Python</span>
+                            <span class="tag-pill">Pandas</span>
+                            <span class="tag-pill">Data Science</span>
+                            <span class="tag-pill">Séries Temporais</span>
+                            <span class="tag-pill">ETL</span>
+                        </div>
+                        <div class="featured-actions">
+                            <a href="https://github.com/MarcosGabrielDF/worldbank-wipo-processor" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i data-lucide="github"></i> Ver Código Fonte
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Featured 2: TCC Heron Shelly 1PM -->
+                    <div class="featured-card tilt-card">
+                        <div class="featured-badge-row">
+                            <span class="featured-tag" style="background: rgba(236, 72, 153, 0.12); color: var(--accent-pink); border-color: rgba(236, 72, 153, 0.3);">IoT &amp; Automação Escolar</span>
+                            <i data-lucide="cpu" class="featured-icon"></i>
+                        </div>
+                        <h3 class="featured-title">TCC Heron - Automação com Shelly 1PM</h3>
+                        <p class="featured-description">
+                            Trabalho de Conclusão de Curso (TCC) para a Escola Professor Mário Antônio Verza. 
+                            Sistema web completo para automação da sinalização sonora dos intervalos e turnos, integrando 
+                            painel web administrativo em PHP ao dispositivo inteligente Shelly 1PM.
+                        </p>
+                        <ul class="featured-highlights">
+                            <li><i data-lucide="check-circle-2"></i> Acionamento remoto inteligente via relé inteligente Shelly 1PM.</li>
+                            <li><i data-lucide="check-circle-2"></i> Painel web intuitivo para agendamento de horários e dias letivos.</li>
+                            <li><i data-lucide="check-circle-2"></i> Redução de falhas humanas na pontualidade escolar.</li>
+                        </ul>
+                        <div class="featured-tags-row">
+                            <span class="tag-pill">PHP</span>
+                            <span class="tag-pill">Shelly 1PM</span>
+                            <span class="tag-pill">IoT</span>
+                            <span class="tag-pill">Automação</span>
+                            <span class="tag-pill">MySQL</span>
+                        </div>
+                        <div class="featured-actions">
+                            <a href="https://github.com/MarcosGabrielDF/TCC-Heron-shelly1pm" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i data-lucide="github"></i> Ver Código Fonte
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Featured 3: Sabores da Paty -->
+                    <div class="featured-card tilt-card">
+                        <div class="featured-badge-row">
+                            <span class="featured-tag" style="background: rgba(139, 92, 246, 0.12); color: var(--accent-violet); border-color: rgba(139, 92, 246, 0.3);">E-Commerce &amp; WhatsApp API</span>
+                            <i data-lucide="shopping-bag" class="featured-icon"></i>
+                        </div>
+                        <h3 class="featured-title">Sabores da Paty - Cardápio &amp; Checkout</h3>
+                        <p class="featured-description">
+                            Aplicação comercial desenvolvida para apresentar o cardápio interativo do estabelecimento. O cliente navega 
+                            pelos produtos, adiciona itens ao carrinho reativo e, ao finalizar, é encaminhado diretamente ao WhatsApp com 
+                            a comanda do pedido formatada de forma automática.
+                        </p>
+                        <ul class="featured-highlights">
+                            <li><i data-lucide="check-circle-2"></i> Carrinho dinâmico de compras em tempo real.</li>
+                            <li><i data-lucide="check-circle-2"></i> Geração de mensagem com o pedido pronto para a API do WhatsApp.</li>
+                            <li><i data-lucide="check-circle-2"></i> Interface fluida, rápida e pensada para dispositivos móveis.</li>
+                        </ul>
+                        <div class="featured-tags-row">
+                            <span class="tag-pill">PHP</span>
+                            <span class="tag-pill">JavaScript</span>
+                            <span class="tag-pill">WhatsApp API</span>
+                            <span class="tag-pill">UX/UI Mobile</span>
+                        </div>
+                        <div class="featured-actions">
+                            <a href="https://github.com/MarcosGabrielDF/Sabores_da_Paty" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i data-lucide="github"></i> Ver Código Fonte
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Featured 4: php-python-docker -->
+                    <div class="featured-card tilt-card">
+                        <div class="featured-badge-row">
+                            <span class="featured-tag" style="background: rgba(16, 185, 129, 0.12); color: var(--accent-emerald); border-color: rgba(16, 185, 129, 0.3);">DevOps &amp; Arquitetura</span>
+                            <i data-lucide="container" class="featured-icon"></i>
+                        </div>
+                        <h3 class="featured-title">Ambiente Multi-Container Docker</h3>
+                        <p class="featured-description">
+                            Arquitetura de microsserviços em containers Docker unindo backend em PHP e Python integrados a um banco 
+                            MySQL. Proporciona isolamento completo de dependências, comunicação em rede interna segura e reprodução 
+                            instantânea com um único comando do Docker Compose.
+                        </p>
+                        <ul class="featured-highlights">
+                            <li><i data-lucide="check-circle-2"></i> Orquestração com Docker Compose unindo PHP, Python e MySQL.</li>
+                            <li><i data-lucide="check-circle-2"></i> Serviços isolados em rede bridge interna.</li>
+                            <li><i data-lucide="check-circle-2"></i> Base sólida e reutilizável para aplicações corporativas.</li>
+                        </ul>
+                        <div class="featured-tags-row">
+                            <span class="tag-pill">Docker</span>
+                            <span class="tag-pill">Docker Compose</span>
+                            <span class="tag-pill">Python</span>
+                            <span class="tag-pill">PHP</span>
+                            <span class="tag-pill">MySQL</span>
+                        </div>
+                        <div class="featured-actions">
+                            <a href="https://github.com/MarcosGabrielDF/php-python-docker" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i data-lucide="github"></i> Ver Código Fonte
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Featured 5: Slim Framework REST APIs -->
+                    <div class="featured-card tilt-card">
+                        <div class="featured-badge-row">
+                            <span class="featured-tag">Backend &amp; Arquitetura REST</span>
+                            <i data-lucide="server" class="featured-icon"></i>
+                        </div>
+                        <h3 class="featured-title">APIs REST com PHP Slim Framework</h3>
+                        <p class="featured-description">
+                            Série de serviços backend construídos com o micro framework Slim (SW2, SWQ, Biblioteca). 
+                            Aplicação rigorosa de padrões RESTful, separação em controladores e serviços, injeção de dependências e 
+                            respostas JSON padronizadas.
+                        </p>
+                        <ul class="featured-highlights">
+                            <li><i data-lucide="check-circle-2"></i> Roteamento veloz com middlewares de segurança e validação.</li>
+                            <li><i data-lucide="check-circle-2"></i> Estruturação modularizada com gerenciador Composer.</li>
+                            <li><i data-lucide="check-circle-2"></i> Persistência relacional otimizada com MySQL.</li>
+                        </ul>
+                        <div class="featured-tags-row">
+                            <span class="tag-pill">PHP 8</span>
+                            <span class="tag-pill">Slim Framework</span>
+                            <span class="tag-pill">Composer</span>
+                            <span class="tag-pill">REST APIs</span>
+                        </div>
+                        <div class="featured-actions">
+                            <a href="https://github.com/MarcosGabrielDF/sw2-php-slim-2025" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i data-lucide="github"></i> Ver Código Fonte
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Featured 6: Estatística com Python -->
+                    <div class="featured-card tilt-card">
+                        <div class="featured-badge-row">
+                            <span class="featured-tag" style="background: rgba(245, 158, 11, 0.12); color: var(--accent-amber); border-color: rgba(245, 158, 11, 0.3);">Estatística &amp; Algoritmos</span>
+                            <i data-lucide="bar-chart-2" class="featured-icon"></i>
+                        </div>
+                        <h3 class="featured-title">Estatística Discreta com Python</h3>
+                        <p class="featured-description">
+                            Projeto dedicado à transposição prática dos fundamentos matemáticos e probabilísticos do curso de Estatística 
+                            do Enap para código Python, implementando distribuições, medidas de tendência central e análise combinatória.
+                        </p>
+                        <ul class="featured-highlights">
+                            <li><i data-lucide="check-circle-2"></i> Modelagem de problemas probabilísticos com scripts Python.</li>
+                            <li><i data-lucide="check-circle-2"></i> Estruturação de dados discretos e cálculos de dispersão.</li>
+                            <li><i data-lucide="check-circle-2"></i> Base essencial para Machine Learning e modelagem preditiva.</li>
+                        </ul>
+                        <div class="featured-tags-row">
+                            <span class="tag-pill">Python</span>
+                            <span class="tag-pill">Estatística</span>
+                            <span class="tag-pill">Probabilidade</span>
+                            <span class="tag-pill">Data Science</span>
+                        </div>
+                        <div class="featured-actions">
+                            <a href="https://github.com/MarcosGabrielDF/Estat-stica-discreta-com-Python-" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                <i data-lucide="github"></i> Ver Código Fonte
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Repositories Section (Interactive 3D Grid + Filter & Search) -->
+        <section id="repos" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag"><i data-lucide="github"></i> Ecossistema Completo</span>
+                    <h2 class="section-title">Repositórios no GitHub</h2>
+                    <p class="section-subtitle">
+                        Explore todos os repositórios públicos sincronizados diretamente do meu perfil no GitHub.
+                    </p>
+                </div>
+
+                <div class="repos-controls">
+                    <div class="search-and-status">
+                        <div class="search-box">
+                            <i data-lucide="search"></i>
+                            <input type="text" id="repo-search-input" class="search-input" placeholder="Buscar por tecnologia, nome ou palavra-chave...">
+                        </div>
+                        <div class="repos-count-badge" id="repo-count-badge">
+                            Carregando repositórios...
+                        </div>
+                    </div>
+
+                    <div class="filters-wrapper">
+                        <button class="filter-btn active" data-category="all">Todos</button>
+                        <button class="filter-btn" data-category="dados">Ciência de Dados &amp; Python</button>
+                        <button class="filter-btn" data-category="backend">Backend &amp; APIs</button>
+                        <button class="filter-btn" data-category="devops">DevOps &amp; Docker</button>
+                        <button class="filter-btn" data-category="iot">IoT &amp; Automação</button>
+                        <button class="filter-btn" data-category="frontend">Frontend &amp; Jogos</button>
+                    </div>
+                </div>
+
+                <div class="repos-grid" id="repos-grid">
+                    <!-- Repositories rendered dynamically by main.js with 3D Tilt -->
+                </div>
+
+                <div class="load-more-container">
+                    <button id="toggle-all-repos" class="btn btn-secondary">
+                        <span>Ver Todos os Projetos</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="contact-section">
+            <div class="container">
+                <div class="contact-card-wrapper">
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <span class="section-tag"><i data-lucide="mail"></i> Vamos Conversar</span>
+                            <h2>Pronto para criar soluções de alto impacto?</h2>
+                            <p>
+                                Estou aberto a oportunidades de <strong>estágio, desenvolvimento de software, projetos de Ciência de Dados 
+                                e automação IoT</strong>. Seja para trocar ideias técnicas ou discutir uma vaga, fique à vontade para entrar em contato.
+                            </p>
+
+                            <div class="contact-direct-links">
+                                <a href="https://wa.me/5543996195689?text=Ol%C3%A1%20Marcos%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade." 
+                                   target="_blank" rel="noopener noreferrer" class="contact-method-card">
+                                    <div class="method-icon" style="background: rgba(37, 211, 102, 0.15); color: #25d366;">
+                                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="method-details">
+                                        <h4>WhatsApp Direto</h4>
+                                        <span>(43) 99619-5689 (Clique para conversar)</span>
+                                    </div>
+                                </a>
+
+                                <a href="mailto:mgdiasfernandes@gmail.com" class="contact-method-card copy-email-btn" data-email="mgdiasfernandes@gmail.com">
+                                    <div class="method-icon">
+                                        <i data-lucide="mail"></i>
+                                    </div>
+                                    <div class="method-details">
+                                        <h4>E-mail</h4>
+                                        <span>mgdiasfernandes@gmail.com (Clique para copiar)</span>
+                                    </div>
+                                </a>
+
+                                <a href="https://www.linkedin.com/in/marcos-gabriel-34ba07295/" target="_blank" rel="noopener noreferrer" class="contact-method-card">
+                                    <div class="method-icon" style="background: rgba(0, 119, 181, 0.15); color: #0077b5;">
+                                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                            <rect x="2" y="9" width="4" height="12"></rect>
+                                            <circle cx="4" cy="4" r="2"></circle>
+                                        </svg>
+                                    </div>
+                                    <div class="method-details">
+                                        <h4>LinkedIn</h4>
+                                        <span>linkedin.com/in/marcos-gabriel-34ba07295</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-action-box">
+                            <div class="method-icon" style="margin: 0 auto; width: 64px; height: 64px; border-radius: 16px;">
+                                <i data-lucide="sparkles" style="width: 32px; height: 32px;"></i>
+                            </div>
+                            <h3>Inicie um projeto ou contratação</h3>
+                            <p>
+                                Precisa de um profissional versátil que domina desde a análise estatística dos dados até a infraestrutura em produção?
+                            </p>
+                            <a href="https://wa.me/5543996195689?text=Ol%C3%A1%20Marcos%20Gabriel!%20Gostaria%20de%20conversar%20sobre%20uma%20oportunidade%20profissional." 
+                               target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width: 100%;">
+                                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                </svg>
+                                <span>Falar via WhatsApp</span>
+                            </a>
+                            <button class="btn btn-secondary copy-email-btn" data-email="mgdiasfernandes@gmail.com" style="width: 100%;">
+                                <i data-lucide="copy"></i> Copiar Meu E-mail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>Descrição</h4>
-                <p>Eu sou uma pessoa que não tempo para nada ;-; </p>
 
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="brand-symbol">&lt;MG /&gt;</span> Marcos Gabriel Dias Fernandes
+                </div>
+
+                <div class="footer-socials">
+                    <a href="https://github.com/MarcosGabrielDF" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-github" title="GitHub">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/marcos-gabriel-34ba07295/" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-linkedin" title="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/marcos_gabriel_d.f/" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-instagram" title="Instagram">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://wa.me/5543996195689?text=Ol%C3%A1%20Marcos%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade." target="_blank" rel="noopener noreferrer" class="social-icon-btn social-whatsapp" title="WhatsApp">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100075214742550" target="_blank" rel="noopener noreferrer" class="social-icon-btn social-facebook" title="Facebook">
+                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <div class="footer-column">
-                <h4>Site feito por:</h4>
-                <p>Marcos Gabriel Dias Fernandes</p>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Marcos Gabriel Dias Fernandes. Desenvolvido com Three.js &amp; VanillaTilt. Sem dependência de imagens raster.</p>
             </div>
         </div>
     </footer>
-    
-    
 
-    <script>
-        function clickMenu(){
-            if(itens.style.display == 'block') {
-                itens.style.display = 'none'
-            } else {
-            itens.style.display = 'block'
-        }
+    <!-- Toast Notification for clipboard -->
+    <div id="toast" class="toast"></div>
 
-    }
+    <!-- External 3D and UI Frameworks via CDN -->
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Three.js (3D Graphics & Particle Universe) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- VanillaTilt.js (3D Physics & Tilt on Cards) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 
-    </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-
+    <!-- Application Scripts -->
+    <script src="three-scene.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
