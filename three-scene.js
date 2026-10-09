@@ -47,17 +47,17 @@ function initBackgroundCanvas() {
     bgRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
     // Particle Cloud (Data Nodes)
-    const particleCount = window.innerWidth < 768 ? 900 : 1800;
+    const particleCount = window.innerWidth < 768 ? 800 : 1400;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
     const colorPalette = [
-        new THREE.Color(0x00f5d4), // Cyan
-        new THREE.Color(0x8b5cf6), // Violet
-        new THREE.Color(0x3b82f6), // Blue
-        new THREE.Color(0x06b6d4), // Light Cyan
-        new THREE.Color(0xec4899)  // Pink
+        new THREE.Color(0x14b8a6), // Soft Teal
+        new THREE.Color(0x38bdf8), // Soft Sky
+        new THREE.Color(0x94a3b8), // Slate Light
+        new THREE.Color(0x64748b), // Slate Muted
+        new THREE.Color(0xe2e8f0)  // Subtle Silver
     ];
 
     for (let i = 0; i < particleCount; i++) {
@@ -79,15 +79,15 @@ function initBackgroundCanvas() {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
-    // Circular glowing particle texture
+    // Circular refined particle texture
     const particleCanvas = document.createElement('canvas');
     particleCanvas.width = 32;
     particleCanvas.height = 32;
     const ctx = particleCanvas.getContext('2d');
     const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-    grad.addColorStop(0, 'rgba(255,255,255,1)');
-    grad.addColorStop(0.3, 'rgba(0,245,212,0.8)');
-    grad.addColorStop(0.8, 'rgba(139,92,246,0.2)');
+    grad.addColorStop(0, 'rgba(255,255,255,0.95)');
+    grad.addColorStop(0.35, 'rgba(20,184,166,0.5)');
+    grad.addColorStop(0.8, 'rgba(56,189,248,0.15)');
     grad.addColorStop(1, 'rgba(0,0,0,0)');
     ctx.fillStyle = grad;
     ctx.beginPath();
@@ -97,7 +97,7 @@ function initBackgroundCanvas() {
     const particleTexture = new THREE.CanvasTexture(particleCanvas);
 
     const material = new THREE.PointsMaterial({
-        size: 5,
+        size: 3.8,
         map: particleTexture,
         vertexColors: true,
         transparent: true,
@@ -108,13 +108,13 @@ function initBackgroundCanvas() {
     bgParticles = new THREE.Points(geometry, material);
     bgScene.add(bgParticles);
 
-    // 3D Wireframe Cyber Grid Plane in the horizon
+    // Subtle 3D Grid Plane in the horizon
     const gridGeometry = new THREE.PlaneGeometry(2400, 2400, 32, 32);
     const gridMaterial = new THREE.MeshBasicMaterial({
-        color: 0x1e293b,
+        color: 0x334155,
         wireframe: true,
         transparent: true,
-        opacity: 0.18
+        opacity: 0.07
     });
     bgMeshGrid = new THREE.Mesh(gridGeometry, gridMaterial);
     bgMeshGrid.rotation.x = -Math.PI / 2.3;
@@ -181,47 +181,47 @@ function initHero3DObject() {
     heroScene.add(heroGroup);
 
     // ----------------------------------------------------
-    // 1. ATOMIC NUCLEUS (Proton/Neutron Quantum Energy Core)
+    // 1. ARCHITECTURAL CORE (Geometric Node Core)
     // ----------------------------------------------------
     const nucleusGroup = new THREE.Group();
     heroGroup.add(nucleusGroup);
 
-    // Inner glowing sphere
+    // Inner core sphere (satin metallic teal)
     const coreSphereGeom = new THREE.SphereGeometry(0.55, 32, 32);
     const coreSphereMat = new THREE.MeshStandardMaterial({
-        color: 0x00f5d4,
-        emissive: 0x00c4a7,
-        emissiveIntensity: 0.9,
-        roughness: 0.15,
-        metalness: 0.85
+        color: 0x0f766e,
+        emissive: 0x14b8a6,
+        emissiveIntensity: 0.35,
+        roughness: 0.3,
+        metalness: 0.8
     });
     const coreSphere = new THREE.Mesh(coreSphereGeom, coreSphereMat);
     nucleusGroup.add(coreSphere);
 
-    // Outer faceted geometric cage (wireframe icosahedron)
+    // Outer faceted geometric cage (titanium / satin wireframe icosahedron)
     const cageGeom = new THREE.IcosahedronGeometry(0.85, 1);
     const cageMat = new THREE.MeshStandardMaterial({
-        color: 0x8b5cf6,
+        color: 0x94a3b8,
         wireframe: true,
-        emissive: 0x6d28d9,
-        emissiveIntensity: 0.5,
-        roughness: 0.2
+        emissive: 0x334155,
+        emissiveIntensity: 0.2,
+        roughness: 0.4,
+        metalness: 0.9
     });
     const cageMesh = new THREE.Mesh(cageGeom, cageMat);
     nucleusGroup.add(cageMesh);
 
     // ----------------------------------------------------
-    // 2. ATOMIC ORBITAL RINGS (3 Classical Quantum Ellipses)
-    // Atom radius is 1.65 max, with camera at z=5.8 this fits perfectly!
+    // 2. ORBITAL RINGS (Harmonized, slender geometry)
     // ----------------------------------------------------
     const orbitRadius = 1.65;
-    const orbitTube = 0.018;
+    const orbitTube = 0.013;
 
-    // Ring 1: Cyan Orbit (tilted 60 deg X)
+    // Ring 1: Soft Teal Orbit
     const ringMat1 = new THREE.MeshBasicMaterial({
-        color: 0x00f5d4,
+        color: 0x14b8a6,
         transparent: true,
-        opacity: 0.75
+        opacity: 0.65
     });
     const ringGeom1 = new THREE.TorusGeometry(orbitRadius, orbitTube, 16, 120);
     const orbit1 = new THREE.Mesh(ringGeom1, ringMat1);
@@ -229,11 +229,11 @@ function initHero3DObject() {
     orbit1.rotation.y = Math.PI / 6;
     heroGroup.add(orbit1);
 
-    // Ring 2: Electric Violet Orbit (tilted -60 deg X, 45 deg Y)
+    // Ring 2: Slate / Indigo Orbit
     const ringMat2 = new THREE.MeshBasicMaterial({
-        color: 0x8b5cf6,
+        color: 0x6366f1,
         transparent: true,
-        opacity: 0.75
+        opacity: 0.55
     });
     const ringGeom2 = new THREE.TorusGeometry(orbitRadius, orbitTube, 16, 120);
     const orbit2 = new THREE.Mesh(ringGeom2, ringMat2);
@@ -241,11 +241,11 @@ function initHero3DObject() {
     orbit2.rotation.y = -Math.PI / 5;
     heroGroup.add(orbit2);
 
-    // Ring 3: Neon Pink Orbit (orthogonal tilt)
+    // Ring 3: Platinum / Silver Orbit
     const ringMat3 = new THREE.MeshBasicMaterial({
-        color: 0xec4899,
+        color: 0xcbd5e1,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.45
     });
     const ringGeom3 = new THREE.TorusGeometry(orbitRadius, orbitTube, 16, 120);
     const orbit3 = new THREE.Mesh(ringGeom3, ringMat3);
@@ -255,53 +255,53 @@ function initHero3DObject() {
 
     // Outer faint stabilizer ring
     const ringMatOuter = new THREE.MeshBasicMaterial({
-        color: 0x3b82f6,
+        color: 0x475569,
         transparent: true,
-        opacity: 0.35,
+        opacity: 0.25,
         wireframe: true
     });
-    const ringGeomOuter = new THREE.TorusGeometry(orbitRadius * 1.08, 0.01, 16, 90);
+    const ringGeomOuter = new THREE.TorusGeometry(orbitRadius * 1.08, 0.008, 16, 90);
     const orbitOuter = new THREE.Mesh(ringGeomOuter, ringMatOuter);
     heroGroup.add(orbitOuter);
 
     // ----------------------------------------------------
-    // 3. ORBITING ELECTRONS (High-speed energy nodes)
+    // 3. ORBITING NODES (Subtle data indicators)
     // ----------------------------------------------------
-    const electronGeom = new THREE.SphereGeometry(0.09, 16, 16);
+    const electronGeom = new THREE.SphereGeometry(0.07, 16, 16);
 
-    // Electron 1 (on Orbit 1)
-    const eMat1 = new THREE.MeshBasicMaterial({ color: 0x00f5d4 });
+    // Node 1 (on Orbit 1)
+    const eMat1 = new THREE.MeshBasicMaterial({ color: 0x5eead4 });
     const electron1 = new THREE.Mesh(electronGeom, eMat1);
     orbit1.add(electron1);
 
-    // Electron 2 (on Orbit 2)
-    const eMat2 = new THREE.MeshBasicMaterial({ color: 0xc084fc });
+    // Node 2 (on Orbit 2)
+    const eMat2 = new THREE.MeshBasicMaterial({ color: 0xa5b4fc });
     const electron2 = new THREE.Mesh(electronGeom, eMat2);
     orbit2.add(electron2);
 
-    // Electron 3 (on Orbit 3)
-    const eMat3 = new THREE.MeshBasicMaterial({ color: 0xf472b6 });
+    // Node 3 (on Orbit 3)
+    const eMat3 = new THREE.MeshBasicMaterial({ color: 0xf8fafc });
     const electron3 = new THREE.Mesh(electronGeom, eMat3);
     orbit3.add(electron3);
 
-    // Electron 4 (counter-electron on Orbit 1)
+    // Node 4 (counter-node on Orbit 1)
     const eMat4 = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
     const electron4 = new THREE.Mesh(electronGeom, eMat4);
     orbit1.add(electron4);
 
     // ----------------------------------------------------
-    // 4. LIGHT SOURCES
+    // 4. BALANCED LIGHT SOURCES
     // ----------------------------------------------------
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.1);
     heroScene.add(ambientLight);
 
-    const cyanLight = new THREE.PointLight(0x00f5d4, 3, 15);
-    cyanLight.position.set(3, 4, 3);
-    heroScene.add(cyanLight);
+    const keyLight = new THREE.PointLight(0xffffff, 1.5, 18);
+    keyLight.position.set(3, 4, 3);
+    heroScene.add(keyLight);
 
-    const violetLight = new THREE.PointLight(0x8b5cf6, 3, 15);
-    violetLight.position.set(-3, -3, 3);
-    heroScene.add(violetLight);
+    const rimLight = new THREE.PointLight(0x14b8a6, 1.2, 16);
+    rimLight.position.set(-3, -3, 3);
+    heroScene.add(rimLight);
 
     // ----------------------------------------------------
     // 5. MOUSE & TOUCH INTERACTION (DRAG TO ROTATE ATOM)

@@ -19,7 +19,7 @@ const REPOS_DATA = [
   },
   {
     "name": "TCC-Heron-shelly1pm",
-    "description": "Trabalho de Conclusão de Curso (TCC): Sistema web para automação da sinalização sonora da Escola Professor Mário Antônio Verza integrado ao hardware Shelly 1PM com painel de horários e acionamento inteligente via relé.",
+    "description": "Trabalho de Conclusão de Curso (TCC): Sistema web para automação da sinalização sonora da Escola Professor Mário Antônio Verza integrado ao hardware Shelly 1PM com painel de horários e acionamento via relé.",
     "language": "PHP",
     "url": "https://github.com/MarcosGabrielDF/TCC-Heron-shelly1pm",
     "stars": 0,
@@ -335,11 +335,11 @@ function initTypewriter() {
     if (!el) return;
 
     const phrases = [
-        "Estudante de Ciência de Dados (Fatec Ourinhos)",
-        "Desenvolvedor Backend (Python & PHP Slim)",
-        "Especialista em Automações IoT (Shelly 1PM)",
-        "DevOps & Conteinerização com Docker",
-        "Construindo Soluções de Alta Performance"
+        "Estudante de Ciência de Dados • Fatec Ourinhos",
+        "Desenvolvimento Backend com Python & PHP (Slim)",
+        "Projetos Práticos de Automação & IoT",
+        "Ambientes Conteinerizados com Docker",
+        "Tratamento e Análise de Dados (Pandas & SQL)"
     ];
 
     let phraseIndex = 0;
@@ -376,29 +376,29 @@ function initTypewriter() {
 }
 
 /**
- * Initialize VanillaTilt 3D physics on cards
+ * Initialize VanillaTilt 3D physics on cards (subtle, non-distracting)
  */
 function initVanillaTilt() {
     if (typeof VanillaTilt === 'undefined') return;
 
-    // Apply tilt to cards with 3D depth
+    // Apply refined tilt to cards
     VanillaTilt.init(document.querySelectorAll('.tilt-card'), {
-        max: 12,
-        speed: 400,
+        max: 6,
+        speed: 500,
         glare: true,
-        'max-glare': 0.22,
-        scale: 1.02,
-        perspective: 1000,
+        'max-glare': 0.1,
+        scale: 1.01,
+        perspective: 1200,
         gyroscope: true
     });
 
     // Subtler tilt on hero interactive element
     VanillaTilt.init(document.querySelectorAll('.hero-card-3d'), {
-        max: 8,
+        max: 5,
         speed: 600,
         glare: true,
-        'max-glare': 0.15,
-        perspective: 1200
+        'max-glare': 0.08,
+        perspective: 1400
     });
 }
 
